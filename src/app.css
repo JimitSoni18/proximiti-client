@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+	color-scheme: dark;
+}
+
+body {
+	@apply h-screen;
+}
+
+#app {
+	@apply h-full;
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+input {
+	@apply px-2 py-1 rounded-sm shadow-md;
+}
+
+h3 {
+	@apply lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold;
+}
+
+button {
+	@apply py-1 cursor-pointer;
+}
+
+button.primary {
+	@apply bg-blue-800 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 font-semibold;
+}
