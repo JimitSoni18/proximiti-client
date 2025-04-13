@@ -30,3 +30,7 @@ button {
 button.primary {
 	@apply bg-blue-800 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300 font-semibold;
 }
+
+.tabs {
+	@apply px-2 py-1 rounded-md hover:bg-slate-700 transition-colors duration-150 cursor-pointer select-none;
+}

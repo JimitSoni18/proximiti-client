@@ -1,19 +1,26 @@
 import { BASE_API_URL } from "~/env";
-import {DEFAULT_HEADERS} from ".";
+import { getAuthHeader } from ".";
+import {get} from"./client";
+import type { Conversation } from "~/types/api/conversations";
+import type { Response } from "~/types/api/response";
 
 export type User = {
 	username: string;
 	password: string;
 };
 
-const API = `${BASE_API_URL}/api/auth/login`;
+const ENDPOINT = `${BASE_API_URL}/api/conversations/list`;
 
-export async function conversationFetchAPI(user: User): Promise<SignInResponse> {
-	return await (
-		await fetch(API, {
-			body: JSON.stringify(user),
-			method: "POST",
-			headers: DEFAULT_HEADERS,
-		})
-	).json();
+export async function conversationListFetchAPI(): Promise<Response<Conversation[]>> {
+	const authHeaders = getAuthHeader();
+
+	if (!authHeaders) {
+		// TODO: trace
+		return {
+			status: "error",
+			message: "something went wrong",
+		};
+	}
+
+	return get(ENDPOINT, authHeaders);
 }
