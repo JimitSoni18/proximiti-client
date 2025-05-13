@@ -42,11 +42,7 @@ export default function SignUp() {
 			<div class="lg:p-4 p-3" />
 			<form class="lg:p-4 p-3 flex flex-col gap-6" onsubmit={handleSubmit}>
 				<h3 class="my-4">Sign Up</h3>
-				<input
-					type="text"
-					placeholder="Enter your username"
-					name="username"
-				/>
+				<input type="text" placeholder="Enter your username" name="username" />
 				<div class="relative">
 					<input
 						type={showPassword() ? "text" : "password"}

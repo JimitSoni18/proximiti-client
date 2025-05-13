@@ -10,6 +10,6 @@ export type AuthenticatedUser = {
 export type RequestUser = {
 	username: string;
 	password: string;
-}
+};
 
 export type SignInResponse = Response<AuthenticatedUser>;

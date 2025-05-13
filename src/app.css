@@ -34,3 +34,6 @@ button.primary {
 .tabs {
 	@apply px-2 py-1 rounded-md hover:bg-slate-700 transition-colors duration-150 cursor-pointer select-none;
 }
+.tab-theme {
+	@apply px-2 py-1 rounded-md bg-indigo-600 hover:bg-indigo-500 transition-colors duration-150 cursor-pointer select-none;
+}

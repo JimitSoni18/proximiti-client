@@ -1,3 +1,4 @@
+import { createMemo } from "solid-js";
 import { store } from "~/store/authstore";
 
 const CONTENT_TYPE_HEADER = "Content-Type";
@@ -7,7 +8,7 @@ const CONTENT_TYPE_JSON = "application/json";
 const DEFAULT_HEADERS = new Headers();
 DEFAULT_HEADERS.append(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON);
 
-function getAuthHeader() {
+const authHeaders = createMemo(() => {
 	const token = store.user?.token;
 	if (!token) return null;
 
@@ -15,6 +16,6 @@ function getAuthHeader() {
 	authHeaders.append(CONTENT_TYPE_HEADER, CONTENT_TYPE_JSON);
 	authHeaders.append(AUTH_HEADER, `Bearer ${token}`);
 	return authHeaders;
-}
+});
 
-export { DEFAULT_HEADERS, getAuthHeader };
+export { DEFAULT_HEADERS, authHeaders };

@@ -40,7 +40,9 @@ function TabButton(props: TabButtonProps) {
 			href={props.href}
 			replace
 			class="rounded-lg p-2 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800"
-			classList={{ "bg-gray-800": currentComponent() === props.name.toLowerCase() }}
+			classList={{
+				"bg-gray-800": currentComponent() === props.name.toLowerCase(),
+			}}
 		>
 			<span>
 				<img src={props.icon} alt={props.name} />

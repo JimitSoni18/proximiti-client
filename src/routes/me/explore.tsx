@@ -9,9 +9,7 @@ export default function Explore() {
 				<div class="grow">hello</div>
 			</div>
 		</>
-	)
+	);
 }
 
-
-function UserSearch() {
-}
+function UserSearch() {}
